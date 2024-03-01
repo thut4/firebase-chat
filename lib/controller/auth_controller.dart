@@ -41,14 +41,21 @@ class AuthController extends GetxController {
       final userCredential = await auth.createUserWithEmailAndPassword(
           email: email!, password: password!);
       if (userCredential.user != null) {
-        Get.toNamed('/chat');
-        userNameController.clear();
-        passwordController.clear();
+        await userCredential.user!.sendEmailVerification();
+        showVerificationEmailSentSnackbar();
+        if (userCredential.user != null && userCredential.user!.emailVerified) {
+          Get.toNamed('/chat');
+          userNameController.clear();
+          passwordController.clear();
+        } else {
+          showVerificationRequiredSnackbar();
+        }
+        // Get.toNamed('/chat');
+        // userNameController.clear();
+        // passwordController.clear();
       } else {
         showRegistrationErrorSnackbar();
       }
-      // await user.user!.sendEmailVerification();
-      // showVerificationEmailSentSnackbar();
     } on FirebaseAuthException catch (e) {
       if (e.code == 'email-already-in-use') {
         showEmailAlreadyInUseSnackbar();
@@ -111,10 +118,22 @@ class AuthController extends GetxController {
 
   void showVerificationEmailSentSnackbar() {
     Get.snackbar(
-      'Registration Successful',
+      'Confirm Verification',
       'A verification email has been sent. Please check your inbox to complete the registration process.',
       snackPosition: SnackPosition.TOP,
       backgroundColor: AppColor.mintGreen,
+      colorText: AppColor.whiteColor,
+      duration: const Duration(seconds: 5),
+      animationDuration: const Duration(milliseconds: 500),
+    );
+  }
+
+  void showVerificationRequiredSnackbar() {
+    Get.snackbar(
+      'Required Verification',
+      'A verification email has been sent. Please check your inbox to complete the registration process.',
+      snackPosition: SnackPosition.TOP,
+      backgroundColor: AppColor.redColor,
       colorText: AppColor.whiteColor,
       duration: const Duration(seconds: 5),
       animationDuration: const Duration(milliseconds: 500),
@@ -131,28 +150,5 @@ class AuthController extends GetxController {
       duration: const Duration(seconds: 3),
       animationDuration: const Duration(milliseconds: 500),
     );
-  }
-
-  bool get isEmailVerified {
-    return auth.currentUser?.emailVerified ?? false;
-  }
-
-  void handleAccess() {
-    if (isEmailVerified) {
-      Get.toNamed('/chat');
-    } else {
-      Get.defaultDialog(
-        title: 'Email Verification',
-        content: Center(
-          child: Column(
-            children: [
-              CircularProgressIndicator(),
-              SizedBox(height: 10),
-              Text('Waiting for email verification...'),
-            ],
-          ),
-        ),
-      );
-    }
   }
 }
