@@ -1,4 +1,4 @@
-# barry_allan
+# firebase-chatting
 
 A new Flutter project.
 
