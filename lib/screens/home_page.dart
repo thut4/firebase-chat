@@ -1,5 +1,4 @@
-import 'package:barry_allan/screens/auth/login.dart';
-import 'package:barry_allan/screens/auth/register.dart';
+import 'package:barry_allan/constant/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
@@ -46,22 +45,20 @@ class HomePage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
             child: RoundButton(
-              onTap: () {
-                Get.to(() => const LoginPage());
-              },
-              text: 'Login',
-              color: Colors.lightBlueAccent,
-            ),
+                onTap: () {
+                  Get.toNamed('/login');
+                },
+                text: 'Login',
+                color: AppColor.lightBlue),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
             child: RoundButton(
-              onTap: () {
-                Get.to(() => const RegisterPage());
-              },
-              text: 'Register',
-              color: Colors.blue,
-            ),
+                onTap: () {
+                  Get.toNamed('/register');
+                },
+                text: 'Register',
+                color: AppColor.darkBlue),
           ),
         ],
       ),

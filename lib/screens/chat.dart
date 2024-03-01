@@ -1,3 +1,4 @@
+import 'package:barry_allan/constant/app_color.dart';
 import 'package:barry_allan/controller/chat_controller.dart';
 import 'package:barry_allan/controller/auth_controller.dart';
 import 'package:flutter/material.dart';
@@ -66,9 +67,9 @@ class ChatScreen extends StatelessWidget {
               },
             ),
             Container(
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 border: Border(
-                  top: BorderSide(color: Colors.lightBlueAccent, width: 2.0),
+                  top: BorderSide(color: AppColor.lightBlue, width: 2.0),
                 ),
               ),
               child: Row(
@@ -125,7 +126,7 @@ class MessageBubble extends StatelessWidget {
             sender,
             style: TextStyle(
               fontSize: 12.0,
-              color: Colors.black54,
+              color: AppColor.darkGrey,
             ),
           ),
           Material(
@@ -140,13 +141,13 @@ class MessageBubble extends StatelessWidget {
                     topRight: Radius.circular(30.0),
                   ),
             elevation: 5.0,
-            color: isMe ? Colors.lightBlueAccent : Colors.white,
+            color: isMe ? AppColor.lightBlue : AppColor.whiteColor,
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
               child: Text(
                 text,
                 style: TextStyle(
-                  color: isMe ? Colors.white : Colors.black54,
+                  color: isMe ? AppColor.whiteColor : AppColor.blackColor,
                   fontSize: 15.0,
                 ),
               ),

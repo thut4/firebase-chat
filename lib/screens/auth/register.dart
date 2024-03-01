@@ -1,3 +1,4 @@
+import 'package:barry_allan/constant/app_color.dart';
 import 'package:barry_allan/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -35,7 +36,7 @@ class RegisterPage extends StatelessWidget {
               },
               textAlign: TextAlign.center,
               keyboardType: TextInputType.emailAddress,
-              decoration: const InputDecoration(
+              decoration: InputDecoration(
                 hintText: 'Enter your email',
                 contentPadding:
                     EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
@@ -43,11 +44,11 @@ class RegisterPage extends StatelessWidget {
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.blueAccent, width: 1.0),
+                  borderSide: BorderSide(color: AppColor.lightBlue, width: 1.0),
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.blueAccent, width: 2.0),
+                  borderSide: BorderSide(color: AppColor.lightBlue, width: 2.0),
                   borderRadius: BorderRadius.all(Radius.circular(24.0)),
                 ),
               ),
@@ -62,7 +63,7 @@ class RegisterPage extends StatelessWidget {
               obscureText: true,
               textAlign: TextAlign.center,
               obscuringCharacter: '*',
-              decoration: const InputDecoration(
+              decoration: InputDecoration(
                 hintText: 'Enter your password',
                 contentPadding:
                     EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
@@ -70,11 +71,11 @@ class RegisterPage extends StatelessWidget {
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.blueAccent, width: 1.0),
+                  borderSide: BorderSide(color: AppColor.lightBlue, width: 1.0),
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.blueAccent, width: 2.0),
+                  borderSide: BorderSide(color: AppColor.lightBlue, width: 2.0),
                   borderRadius: BorderRadius.all(Radius.circular(24.0)),
                 ),
               ),
@@ -85,7 +86,7 @@ class RegisterPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16.0),
               child: Material(
-                color: Colors.blueAccent,
+                color: AppColor.lightBlue,
                 borderRadius: const BorderRadius.all(Radius.circular(30.0)),
                 elevation: 5.0,
                 child: MaterialButton(
@@ -94,10 +95,7 @@ class RegisterPage extends StatelessWidget {
                   },
                   minWidth: 200.0,
                   height: 42.0,
-                  child: const BigText(
-                    text: 'Register',
-                    color: Colors.white,
-                  ),
+                  child: BigText(text: 'Register', color: AppColor.whiteColor),
                 ),
               ),
             ),

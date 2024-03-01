@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../constant/app_color.dart';
 import 'text_widget.dart';
 
 class RoundButton extends StatelessWidget {
@@ -25,10 +26,7 @@ class RoundButton extends StatelessWidget {
         onPressed: onTap,
         minWidth: 200.0,
         height: 42.0,
-        child: BigText(
-          text: text,
-          color: Colors.white,
-        ),
+        child: BigText(text: text, color: AppColor.whiteColor),
       ),
     );
   }
