@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "129414522672",
+    "project_id": "testing123-d14bb",
+    "storage_bucket": "testing123-d14bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:129414522672:android:e4e50060b2ae52f5480af5",
+        "android_client_info": {
+          "package_name": "com.thuta.barry_allan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpQnLup_8TDtiykB6-HvjX2zO2a5xO9WM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
